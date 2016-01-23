@@ -7,12 +7,12 @@ width = 800
 pg.init()
 Background = (0,0,0)
 screen = pg.display.set_mode((height,width))
-pg.display.set_caption("PLAY WITH MY BALLS")
+pg.display.set_caption("Asteroids")
 
-shipslow = pg.image.load("shipslow.png")
-shipfast = pg.image.load("shipfast.png")
-planets = [pg.image.load("planet1.png"),pg.image.load("planet2.png"),pg.image.load("planet3.png"),pg.image.load("planet4.png"),pg.image.load("planet5.png"),pg.image.load("planet6.png")]
-powerupimages = {"Life": pg.image.load("life.png"), "Rocket": pg.image.load("rocket.png") }
+shipslow = pg.image.load("images/shipslow.png")
+shipfast = pg.image.load("images/shipfast.png")
+planets = [pg.image.load("images/planet1.png"),pg.image.load("images/planet2.png"),pg.image.load("images/planet3.png"),pg.image.load("images/planet4.png"),pg.image.load("images/planet5.png"),pg.image.load("images/planet6.png")]
+powerupimages = {"Life": pg.image.load("images/life.png"), "Rocket": pg.image.load("images/rocket.png") }
 
 SCORE = pg.font.Font('freesansbold.ttf', 40)
 
@@ -114,7 +114,7 @@ class Player(Particle):
         self.lives = 3
         self.image = image
 
-    def display(self):
+    def display(self):   # Rewrite using cases
         first = pg.transform.scale(self.image, (self.size,self.size))
         ship = pg.transform.rotate(first, -45)
 
